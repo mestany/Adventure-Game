@@ -1,0 +1,47 @@
+import random
+import time
+
+def displayIntro():
+    print("You are in Jurrasic World. In front of")
+    print("two tunnels. In one tunnel is a T-REX which is")
+    print("wild and wants to eat you. In the")
+    print("other, Brachiosaurus which eats plants and tress so")
+    print("he won't hurt you")
+    print()
+
+def chooseTunnel():
+    tunnel = ""
+    while tunnel != "1" and tunnel != "2":
+        print("Which tunnel will you choose? (1 or 2)")
+        tunnel = input()
+   return tunnel
+
+def checkTunnel(chosenTunnel):
+    print("You approach the Tunnel...")
+    time.sleep(2)
+    print("It is dark and scary...")
+    time.sleep(2)
+    print("A large Dinsour jumps out in front of you. He opens his jaws and...")
+    print()
+    time.sleep(2)
+
+    friendlytunnel = random.randint(1,2)
+
+    if chosenTunnel == str(friendlytunnel):
+        print("doesn't harm you")
+    else:
+        print("swollow you in one bite")
+
+
+playAgain = "yes"
+while playAgain =="yes" or playAgain == "y":
+
+    displayIntro()
+
+    tunnelNumber = chooseTunnel()
+
+    checkTunnel(tunnelNumber)
+
+    print("Would you like to play again? (yes or no)")
+    playAgain = input()
+python beginner game
